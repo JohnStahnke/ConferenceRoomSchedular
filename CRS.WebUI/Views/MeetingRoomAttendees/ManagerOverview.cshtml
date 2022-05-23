@@ -1,0 +1,73 @@
+﻿@*RR Final, I did not get this implemented but wanted to finish this project so I can understand how it is built*@
+
+@model IEnumerable<CRS.Domain.ConcreteEntities.MeetingRoomAttendee>
+@{
+    ViewBag.Title = "Meetings - Rooms - Attendees";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2>Manager Overview</h2>
+        <h3>Meetings - Rooms - Attendees</h3>
+        <p>
+            Here you will find a list of scheduled meetings,
+            the rooms they are in, and who is scheduled to attend them.
+        </p>
+    </div>
+    <table class="table table-striped table-condensed table-bordered">
+        <tr>
+            <th class="text-center">Meeting ID</th>
+            <th class="text-center">Subject</th>
+            <th class="text-center">Date</th>
+            <th class="text-center">Hour</th>
+
+            <th class="text-center">Room ID</th>
+            <th class="text-center">Room Name</th>
+            <th class="text-center">Room Floor</th>
+            <th class="text-center">Room Location</th>
+
+            <th class="text-center">Attendee ID</th>
+            <th class="text-center">Attendee</th>
+            <th class="text-center">Email</th>
+            <th class="text-center">Phone</th>
+
+            <th class="text-center">Cancel Attendance</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="text-center">@item.MeetingID</td>
+                <td class="text-left">@item.MeetingSubject</td>
+                <td class="text-center">@item.MeetingDate</td>
+                <td class="text-left">@item.MeetingHour</td>
+
+                <td class="text-left">@item.ConferenceRoomID</td>
+                <td class="text-left">@item.ConferenceRoomName</td>
+                <td class="text-left">@item.ConferenceRoomFloor</td>
+                <td class="text-left">@item.ConferenceRoomLocation</td>
+
+                <td class="text-left">@item.AttendeeID</td>
+                <td class="text-left">@item.AttendeeName</td>
+                <td class="text-left">@item.AttendeeEmail</td>
+                <td class="text-left">@item.AttendeePhone</td>
+
+                <td class="text-center">
+                    @using (Html.BeginForm("Delete", "MeetingsAttendees"))
+                    {   //Since I only need Both IDs to delete I do not need another page to gather data
+                        @Html.Hidden("MeetingID", item.MeetingID)
+                        @Html.Hidden("AttendeeID", item.AttendeeID)
+                        @Html.Hidden("PreviousView", "ManagerOverview")
+                        <input type="submit"
+                               class="btn btn-danger btn-xs"
+                               value="Cancel" />
+                    }
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+
+
+
+
+

@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CRS.Domain.ConcreteEntities.Attendee">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAABAAAAAAAAAAAAAAAAAAAAQAABAAAAAAAAAA=</HashCode>
+      <FileName>ConcreteEntities\Attendee.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CRS.Domain.ConcreteEntities.ConferenceRoom">
+    <Position X="4.75" Y="7" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAABAAACAAAAAAAAgAAA=</HashCode>
+      <FileName>ConcreteEntities\ConferenceRoom.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.293" />
+  </Class>
+  <Class Name="CRS.Domain.ConcreteEntities.Meeting">
+    <Position X="0.5" Y="7.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAgBAg=</HashCode>
+      <FileName>ConcreteEntities\Meeting.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CRS.Domain.ConcreteEntities.MeetingAttendee">
+    <Position X="4.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAg=</HashCode>
+      <FileName>ConcreteEntities\MeetingAttendee.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CRS.Domain.ConcreteEntities.MeetingRoomAttendee">
+    <Position X="9.25" Y="6" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AACQAAAABAAAAABAAAAAAAAAAABAAQCABAAAAAAgBAg=</HashCode>
+      <FileName>ConcreteEntities\MeetingRoomAttendee.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CRS.Domain.ConcreteProcessors.ProcessConferenceRooms">
+    <Position X="7" Y="7.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAQAAAAAAAAAAACAAABAA=</HashCode>
+      <FileName>ConcreteProcessors\ProcessConferenceRooms.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CRS.Domain.ConcreteProcessors.ADONetFactories">
+    <Position X="10" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEABAAAAAAAAAAA=</HashCode>
+      <FileName>ConcreteProcessors\ADONetFactories.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CRS.Domain.ConcreteProcessors.ProcessAttendees">
+    <Position X="2.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAIAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConcreteProcessors\ProcessAttendees.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CRS.Domain.ConcreteProcessors.ProcessMeetingRoomAttendees">
+    <Position X="11.5" Y="4" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>ConcreteProcessors\ProcessMeetingRoomAttendees.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.206" />
+  </Class>
+  <Class Name="CRS.Domain.ConcreteProcessors.ProcessMeetingAttendees">
+    <Position X="6" Y="2.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAQAIAAAACAA=</HashCode>
+      <FileName>ConcreteProcessors\ProcessMeetingAttendees.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CRS.Domain.ConcreteProcessors.ProcessMeetings">
+    <Position X="2.5" Y="7.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAACAIAAAAAAAIAEAAAA=</HashCode>
+      <FileName>ConcreteProcessors\ProcessMeetings.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="CRS.Domain.Abstract.IMeetingAttendee">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAg=</HashCode>
+      <FileName>Abstract\IMeetingAttendee.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CRS.Domain.Abstract.IMeeting">
+    <Position X="0.5" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAgBAg=</HashCode>
+      <FileName>Abstract\IMeeting.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CRS.Domain.Abstract.IConferenceRoom">
+    <Position X="4.75" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAABAAACAAAAAAAAgAAA=</HashCode>
+      <FileName>Abstract\IConferenceRoom.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CRS.Domain.Abstract.IAttendee">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAABAAAAAAAAAAAAAAAAAAAAQAABAAAAAAAAAA=</HashCode>
+      <FileName>Abstract\IAttendee.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CRS.Domain.Abstract.IMeetingRoomAttendee">
+    <Position X="9.25" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AACQAAAABAAAAABAAAAAAAAAAABAAQCABAAAAAAgBAg=</HashCode>
+      <FileName>Abstract\IMeetingRoomAttendee.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CRS.Domain.Abstract.IProcessConferenceRooms">
+    <Position X="7" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAQAAAAAAAAAAACAAABAA=</HashCode>
+      <FileName>Abstract\IProcessConferenceRooms.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CRS.Domain.Abstract.IProcessAttendees">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAIAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Abstract\IProcessAttendees.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CRS.Domain.Abstract.IProcessMeetingAttendees">
+    <Position X="6" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAQAIAAAACAA=</HashCode>
+      <FileName>Abstract\IProcessMeetingAttendees.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CRS.Domain.Abstract.IProcessMeetingRoomAttendees">
+    <Position X="11.5" Y="2.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Abstract\IProcessMeetingRoomAttendees.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CRS.Domain.Abstract.IProcessMeetings">
+    <Position X="2.5" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAACAIAAAAAAAIAEAAAA=</HashCode>
+      <FileName>Abstract\IProcessMeetings.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

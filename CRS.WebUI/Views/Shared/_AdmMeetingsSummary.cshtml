@@ -1,0 +1,25 @@
+﻿@model CRS.Domain.ConcreteEntities.Meeting
+
+<div class="well">
+    <h3>
+        <strong>@Model.MeetingDate</strong>
+        @Model.ConferenceRoomID.ToString()
+    </h3>
+    @*@using (Html.BeginForm("AddToReservations", "Reservations"))*@
+    @*{*@
+        @*<div class="pull-right">*@
+            @*@Html.HiddenFor(x => x.MeetingID)*@ @*For Each ConferenceRoomID add a hidden element*@
+            @*@Html.Hidden("ConferenceRoomID", Model.ConferenceRoomID)*@
+            @*@Html.Hidden("returnUrl", Request.Url.PathAndQuery)*@ @*a hidden element with an URL*@
+            @*<input type="submit" class="btn btn-success" value="Book the room" />*@
+        @*</div>*@
+
+    @*}*@
+    <div class="pull-right">
+        @Html.ActionLink("Delete Meeting", "Delete", "Meetings", new {@Model.ConferenceRoomID}, new { @class = "btn-success" })
+    </div>
+  
+
+
+    <span class="lead">@Model.MeetingDate</span>
+</div>

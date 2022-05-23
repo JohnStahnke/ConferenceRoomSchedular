@@ -1,0 +1,50 @@
+﻿@model IEnumerable<CRS.Domain.ConcreteEntities.Attendee>
+@{
+    ViewBag.Title = "Attendee Manager";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3>Attendee Manager</h3>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped table-condensed table-bordered">
+            <tr>
+                <th class="text-center">ID</th>
+                <th class="text-center">Name</th>
+                <th class="text-center">Email</th>
+                <th class="text-center">Phone</th>
+                <th class="text-center" colspan="2">Modify</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="text-center">@item.AttendeeID</td>
+                    <td class="text-left">@item.AttendeeName</td>
+                    <td class="text-center">@item.AttendeeEmail</td>
+                    <td class="text-left">@item.AttendeePhone</td>
+
+                    <td class="text-center">
+                        @* Go to the Update page and gather update data *@
+                        @Html.ActionLink("Update", "Update", new { SelectedAttendeeID = item.AttendeeID }, new { @class = "btn btn-primary btn-xs" })
+                    </td>
+
+                    <td class="text-center">
+                        @using (Html.BeginForm("Delete", "Attendees"))
+                        {   //Since I only need a ID to delete I do not need another page to gather data
+                            @Html.Hidden("AttendeeID", item.AttendeeID)
+                            <input type="submit"
+                                   class="btn btn-danger btn-xs"
+                                   value="Delete" />
+                        }
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="panel-footer">
+        @* Go to the Insert page and gather insert data *@
+        @Html.ActionLink("Add a new Attendee", "Insert", new { PreviousView = "Index" }, new { @class = "btn btn-primary" })
+    </div>
+</div>
+

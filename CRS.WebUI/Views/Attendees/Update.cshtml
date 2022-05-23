@@ -1,0 +1,40 @@
+﻿@model CRS.Domain.ConcreteEntities.Attendee
+@*This page must be browsed from Index*@
+@{
+    ViewBag.Title = "Admin: Edit " + @Model.AttendeeName;
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="panel">
+    <div class="panel-heading">
+        <h3>Update Attendee: @Model.AttendeeID</h3>
+    </div>
+    @using (Html.BeginForm())
+    {
+        <div class="panel-body">
+            @Html.HiddenFor(m => m.AttendeeID)
+            @foreach (var property in ViewData.ModelMetadata.Properties)
+            {
+                if (property.PropertyName != "AttendeeID")
+                {
+                    <div class="form-group">
+                        @*check for nulls using ?? then use Property name if Display name is null*@
+                        <label>@(property.DisplayName ?? property.PropertyName)</label>
+                        @if (property.PropertyName == "Description")
+                        {
+                            @Html.TextArea(property.PropertyName, null, new { @class = "form-control", rows = 5 })
+                        }
+                        else
+                        {
+                            @Html.TextBox(property.PropertyName, null, new { @class = "form-control" })
+                        }@*end if*@
+                    </div>
+                }@*end if*@
+            }@*end foreach*@
+        </div>
+        <div class="panel-footer">
+            <input type="submit" value="Save" class="btn btn-danger" />@*Submit back to same page!*@
+            |
+            @Html.ActionLink("Cancel and return to List", "Index", null, new { @class = "btn btn-primary" })
+        </div>
+    }@*end using*@
+</div>

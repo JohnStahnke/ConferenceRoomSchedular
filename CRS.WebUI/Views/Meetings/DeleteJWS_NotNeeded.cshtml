@@ -1,0 +1,67 @@
+﻿@model CRS.Domain.ConcreteEntities.Meeting
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/ErrorStyles.css" rel="stylesheet" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>Meeting</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.MeetingSubject)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.MeetingSubject)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.MeetingDate)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.MeetingDate)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.MeetingHour)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.MeetingHour)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ConferenceRoomID)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ConferenceRoomID)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

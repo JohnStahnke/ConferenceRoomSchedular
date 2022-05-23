@@ -1,0 +1,40 @@
+﻿@model IEnumerable<CRS.Domain.ConcreteEntities.Attendee>
+<div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3>Attendee Information for meeting: @TempData["SelectedMeetingID"]</h3>
+            <p>
+                Register for a meeting by filling in the information below.<br />
+                (Or, lookup your existing information using just your Email address!)
+            </p>
+        </div>
+        <div class="panel-body">
+            <table class="table table-striped table-condensed table-bordered">
+                <tr>
+                    <th class="text-center">Your Email</th>
+                    <th class="text-center">Join Meeting?</th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="text-center">@item.AttendeeEmail</td>
+                        <td class="text-center">
+                            @using (Html.BeginForm("Insert", "MeetingsAttendees"))
+                            {   //Since I only need Both IDs to delete I do not need another page to gather data
+                                @Html.Hidden("MeetingID", (int)@TempData["SelectedMeetingID"])
+                                @Html.Hidden("AttendeeID", item.AttendeeID)
+                                <input type="submit"
+                                       class="btn btn-success btn-xs"
+                                       value="I will attend!" />
+                            }
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+        <p>
+            @* Go to the Insert page and gather insert data *@
+        @Html.ActionLink("I am New", "Insert", "Attendees", new { SelectedMeetingID = @TempData["SelectedMeetingID"] }, new { @class = "btn btn-danger btn-s" })
+        |
+        @Html.ActionLink("Back to List", "Index", "MeetingsRoomsAttendees", new { SelectedMeetingID = @TempData["SelectedMeetingID"] }, new { @class = "btn btn-success btn-s" })
+    </p>

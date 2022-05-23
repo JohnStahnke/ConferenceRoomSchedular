@@ -1,0 +1,28 @@
+﻿@model IEnumerable<CRS.Domain.ConcreteEntities.Meeting>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/ErrorStyles.css" rel="stylesheet" />
+    <title>Index</title>
+</head>
+<body>
+    @foreach (var CR in Model)
+    {
+        <div class="row">
+            <div class="col-xs-6 col-sm-4"><h4>@CR.MeetingSubject</h4><h5>@CR.MeetingDate</h5><h5>@CR.MeetingHour</h5></div>
+            @*<div class="col-xs-6 col-sm-4"></div>*@
+            @*<div class="col-xs-6 col-sm-4"><h4>@CR.ConferenceRoomFloor</h4></div>*@
+        </div>
+        <div class="pull-right label label-primary">
+            <h1>@CR.MeetingID</h1>
+        </div>
+    }
+</body>
+</html>

@@ -1,0 +1,26 @@
+﻿@*RR Final, I did not implement CR Details view.*@
+
+@model CRS.Domain.ConcreteEntities.ConferenceRoom
+
+@{
+    ViewBag.Title = "ConferenceRoomDetails";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Conference Room Details</h2>
+
+<div>
+    <h4>Conference Room: @Model.ConferenceRoomID</h4>
+    <hr />
+    <div class="container">
+        <table class="list-group">
+            <tr><td>Conference Room Name:</td><td class="badge">@Html.DisplayFor(model => model.ConferenceRoomName)</td></tr>
+            <tr><td>Conference Room Floor:</td><td class="badge">@Html.DisplayFor(model => model.ConferenceRoomFloor)</td></tr>
+            <tr><td>Conference Room Location:</td><td class="badge">@Html.DisplayFor(model => model.ConferenceRoomLocation)</td></tr>
+        </table>
+    </div>
+</div>
+<hr />
+<p>
+    @Html.ActionLink("Full list of Conference Rooms", "Index", null, new { @class = "btn btn-primary" })
+</p>

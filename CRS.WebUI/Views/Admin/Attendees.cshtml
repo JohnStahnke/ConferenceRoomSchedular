@@ -1,0 +1,14 @@
+﻿@model CRS.Domain.ConcreteProcessors.ProcessAttendees
+@{
+    ViewBag.Title = "Attendees";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Meetings</h2>
+
+@foreach (var r in Model.Attendees)
+{
+    @Html.Partial("_AdmAttendeesSummary", r)
+}
+
+

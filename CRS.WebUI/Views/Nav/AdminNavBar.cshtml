@@ -1,0 +1,21 @@
+﻿@*My feeble attempt at an admin nav bar*@
+@*@Html.ActionLink("Meetings", "Meetings");
+@Html.ActionLink("Conference Rooms", "ConferenceRooms");
+@Html.ActionLink("Meeting Room Attendees", "MeetingRoomAttendees");
+@Html.ActionLink("Attendees", "Attendees");*@
+
+
+<div class="container">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                @Html.ActionLink("Manage Conference Rooms", "Index", "ConferenceRooms", null, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Manage Meetings", "Index", "Meetings", null, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Manage Attendees", "Index", "Attendees", null, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Manager Overview", "ManagerOverview", "MeetingRoomAttendees", null, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Home Meeting List", "Index", "Home", null, new { @class = "btn btn-success" })
+
+            </div>
+        </div>
+    </div>
+</div>
